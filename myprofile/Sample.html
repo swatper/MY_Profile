@@ -10,6 +10,7 @@
         height: 80%;
     }
     body {
+        background-color: #000000;
         display: flex; /*전체 채움 -> footer 밀림*/
         flex-direction: column; 
         margin: 0;
@@ -21,6 +22,7 @@
         margin: 5px;
         padding: 5px;
         flex: 1;
+        align-self: center;
     }
     /*footer라는 클래스에 적용할 CSS*/    
     .footer{
@@ -30,11 +32,18 @@
         padding: 10px 0;
         width: 100%;
     }
+    .Sample{
+        color: aliceblue;
+    }
+    .Career{
+        border: 1px solid #ffffff;
+        margin: 0 auto;
+    }
     </style>
 </head>
 
 <body>
-    <div class="sample">
+    <div class="Sample">
         <h3>404NotFound 조</h3>
         <h5>팀장: 김구빈 </h5>
         <h5>팀원: 박상현</h5>
@@ -44,7 +53,7 @@
     </div>
 
     <div class="Intro"> 
-        <iframe src = ""></iframe>
+        
     </div>
 
     <div class="info">
@@ -60,7 +69,17 @@
     </div>
 
     <div class="Career">
-
+        <script>
+            //Ajax 요청으로 Career.jsp에서 크기 데이터를 가져옴
+            fetch('Career.jsp')
+                .then(response => response.json())
+                .then(data => {
+                    const careerSection = document.getElementById('careerSection');
+                    careerSection.style.width = data.width;
+                    careerSection.style.height = data.height;
+                })
+                .catch(error => console.error('Error:', error));
+        </script>
     </div>
 
     <div class="Activity">
