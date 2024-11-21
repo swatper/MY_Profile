@@ -1,13 +1,13 @@
  /* 콘텐츠를 감싸는 전체 컨테이너 */
  .Career_container {
-    width: 80%; /* 화면 너비의 80% */
-    max-width: 1200px; /* 최대 너비 제한 */
-    align-self: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: left;
-    background-color: #fff; /* 흰색 배경 */
-    padding: 30px; /* 내부 여백 */
-    border-radius: 8px; /* 둥근 모서리 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;  /* 테두리 둥글게 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 그림자 효과 */
 }
 
 /* 제목 스타일 */
