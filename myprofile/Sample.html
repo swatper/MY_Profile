@@ -43,7 +43,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     .Career_Section{
-        align-self: center;
+        display : flex;
+    }
+    .Intro_Section{
+        display: flex;
     }
     </style>
     <link rel="stylesheet" href="CSS/Intro.css">
@@ -67,15 +70,15 @@
             fetch('Section/IntroSize.jsp')
                 .then(response => response.json())
                 .then(data => {
-                    const careerSection = document.getElementsByClassName('Intro')[0];
-                    careerSection.style.width = data.width;
-                    careerSection.style.height = data.height;
-                    // Career.jsp의 콘텐츠를 가져와 careerSection에 삽입
+                    const introSection = document.getElementsByClassName('Intro')[0];
+                    introSection.style.width = data.width;
+                    introSection.style.height = data.height;
+                    // Intro.jsp의 콘텐츠를 가져와 introSection에 삽입
                     return fetch('Section/Intro.jsp');
                 })
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementsByClassName('Intro').innerHTML = html;
+                    document.getElementsByClassName('Intro')[0].innerHTML = html;
                 })
                 .catch(error => console.error('Error:', error));
             </script>    
