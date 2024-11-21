@@ -1,0 +1,88 @@
+.container { /* 전체 컨테이너 스타일 */
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;  /* 테두리 둥글게 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 그림자 효과 */
+}
+
+
+.title { /* 제목 스타일 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 70px; /* 아래 여백 */
+    color: #2c3e50;
+    border-bottom: 2px solid #8e44ad;
+    padding-bottom: 10px;
+}
+
+.subtitle{  /* 서브타이틀 스타일 */
+    text-align: center;
+}
+
+.subtitle h1 {/* 서브타이틀 h1 스타일 */
+    display: inline-block;  /* 인라인 블록으로 설정 */
+    align-items: center; /* 가운데 정렬 */
+    flex-direction: column;
+    background: linear-gradient(135deg, #8e44ad, #3498db);  /* 그라데이션 배경 */
+    color: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  /* 텍스트 그림자 */
+}
+
+.subtitle h2 {  /* 서브타이틀 h2 스타일 */ 
+    align-items: center;
+    font-size: 1.8rem;
+    margin: 60px 0 0 0;  /* 여백 설정 */
+    font-style: italic;
+}
+
+.description {  /* 설명 영역 스타일 */
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.description span {   /* 설명 영역 내 강조된 텍스트 스타일(안녕하세요) */
+    font-size: 1.4rem;
+    color: #000000;
+    font-weight: bold;
+}
+
+.button {  /* 버튼 스타일 */
+    margin: 70px;
+    display: inline-block;
+    background-color: #de3bff;
+    color: #fff;
+    padding: 15px 30px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+
+.button:hover {   /* 버튼에 마우스 올릴 시 효과 */
+    background-color: #C70039;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+.button:active {  /* 버튼 클릭 시 효과 */
+    background-color: #900C3F;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
