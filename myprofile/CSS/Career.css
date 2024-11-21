@@ -1,7 +1,7 @@
  /* 콘텐츠를 감싸는 전체 컨테이너 */
  .Career_container {
-    width: 80%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     text-align: left;
     background-color: #f9f9f9;
@@ -13,18 +13,12 @@
 /* 제목 스타일 */
 .Career_title {
     text-align: center; /* 텍스트 중앙 정렬 */
-
     font-size: 32px;
     font-weight: bold;
-    margin-bottom: 70px; /* 아래 여백 */
+    margin-bottom: 50px; /* 아래 여백 */
     color: #2c3e50;
     border-bottom: 2px solid #8e44ad;
     padding-bottom: 10px;
-}
-
-/* 수상 내역 리스트 스타일 */
-.award {
-    margin-bottom: 20px; /* 각 수상 항목 간 간격 */
 }
 
 .award-list {
@@ -40,7 +34,7 @@
     left: 0;
     width: 2px; /* 세로줄 두께 */
     height: 100%; /* 세로줄 높이: 부모 높이에 맞춤 */
-    background-color: black; /* 세로줄 색상 */
+    background-color: #8e44ad; /* 세로줄 색상 */
 }
 
 /* 수상 제목 스타일 */
@@ -54,13 +48,11 @@
 .award-year {
     font-size: 25px;
     color: #666; /* 회색 텍스트 */
-    margin-top: 5px; /* 제목과의 간격 */
+    margin-top: 1px; /* 제목과의 간격 */
 }
 
 /* 수상 설명 스타일 */
 .award-name {
     font-size: 17px;
     color: #444; /* 어두운 회색 */
-    margin-top: 10px; /* 연도와의 간격 */
-    line-height: 1.5; /* 줄 간격 */
 }
