@@ -1,0 +1,66 @@
+ /* 콘텐츠를 감싸는 전체 컨테이너 */
+ .container {
+    width: 80%; /* 화면 너비의 80% */
+    max-width: 1200px; /* 최대 너비 제한 */
+    align-self: center;
+    text-align: left;
+    background-color: #fff; /* 흰색 배경 */
+    padding: 30px; /* 내부 여백 */
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+}
+
+/* 제목 스타일 */
+.title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #000; /* 검은색 텍스트 */
+    border-bottom: 1px solid #ccc; /* 하단 구분선 */
+    padding-bottom: 10px; /* 제목 아래 여백 */
+}
+
+/* 수상 내역 리스트 스타일 */
+.award {
+    margin-bottom: 20px; /* 각 수상 항목 간 간격 */
+}
+
+.award-list {
+    display: flex; /* 세로줄과 내용을 나란히 배치 */
+    flex-direction: column;
+    position: relative;
+    gap: 15px; /* 세로줄과 내용 간격 */
+}
+/*세로줄 만들기*/
+.award-list::before{
+    content: ''; /* 세로줄을 위한 가상 요소 생성 */
+    position: absolute; /*부모 요소 기준 위치*/
+    top: 0;
+    left: 0;
+    width: 2px; /* 세로줄 두께 */
+    height: 100%; /* 세로줄 높이: 부모 높이에 맞춤 */
+    background-color: black; /* 세로줄 색상 */
+}
+
+/* 수상 제목 스타일 */
+.award-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000; /* 보라색 텍스트 */
+}
+
+/* 수상 연도 스타일 */
+.award-year {
+    font-size: 25px;
+    color: #666; /* 회색 텍스트 */
+    margin-top: 5px; /* 제목과의 간격 */
+}
+
+/* 수상 설명 스타일 */
+.award-name {
+    font-size: 17px;
+    color: #444; /* 어두운 회색 */
+    margin-top: 10px; /* 연도와의 간격 */
+    line-height: 1.5; /* 줄 간격 */
+}
