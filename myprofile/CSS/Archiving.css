@@ -1,0 +1,49 @@
+.Archiving_container { /* 전체 컨테이너 스타일 */
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;  /* 테두리 둥글게 */
+}
+
+.Archiving_title { /* 제목 스타일 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 70px; /* 아래 여백 */
+    color: #2c3e50;
+    align-items: center;
+    border-bottom: 2px solid #8e44ad;
+    padding-bottom: 10px;
+}
+
+.Archiving_list{
+    display: flex; /* 내부 항목을 가로로 배치 */
+    justify-content: space-around; /* 항목 간 간격을 균일하게 */
+    align-items: center; /* 항목 세로 정렬 */
+    gap: 20px; /* 항목 간 간격 */
+    flex-wrap: wrap; /* 화면이 좁아지면 줄 바꿈 */
+}
+
+.GitHub, .Notion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    height: 150px;
+    border-radius: 15px;  /* 테두리 둥글게 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 그림자 효과 */
+    padding: 5px
+}
+
+.GitHub img, .Notion img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px; /* 이미지와 텍스트 사이 간격 */
+}
+
+.Info{
+    color: #666;
+}
