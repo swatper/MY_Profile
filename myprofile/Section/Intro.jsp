@@ -1,6 +1,6 @@
 <div class="Intro_container">
     <!-- 제목 -->
-    <div class="title">Intro</div>
+    <div class="Intro_title">Intro</div>
 
     <!-- 서브타이틀 -->
     <div class="subtitle">
