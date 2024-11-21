@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8"%>
 <!--html 코드-->
-<div class="container">
+<div class="Career_container">
     <!-- 섹션 제목 -->
-    <div class="title">Career</div>
+    <div class="Career_title">Career</div>
     <!-- 대회 참여 내역 -->
     <div class="award">
         <div class="award-title">대회 참여</div>

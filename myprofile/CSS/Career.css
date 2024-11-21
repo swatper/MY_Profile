@@ -1,5 +1,5 @@
  /* 콘텐츠를 감싸는 전체 컨테이너 */
- .container {
+ .Career_container {
     width: 80%; /* 화면 너비의 80% */
     max-width: 1200px; /* 최대 너비 제한 */
     align-self: center;
@@ -11,7 +11,7 @@
 }
 
 /* 제목 스타일 */
-.title {
+.Career_title {
     text-align: center;
     font-size: 32px;
     font-weight: bold;

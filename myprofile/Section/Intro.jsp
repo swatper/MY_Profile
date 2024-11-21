@@ -1,4 +1,4 @@
-<div class="container">
+<div class="Intro_container">
     <!-- 제목 -->
     <div class="title">Intro</div>
 
@@ -17,6 +17,6 @@
 
     <!-- 버튼 -->
     <div style="text-align: center;">
-        <a href="#about" class="button">더 알아보기 ↓</a>
+        <a href="#about" class="Intro_button">더 알아보기 ↓</a>
     </div>
 </div>

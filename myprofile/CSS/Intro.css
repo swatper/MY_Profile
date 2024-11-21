@@ -1,4 +1,4 @@
-.container { /* 전체 컨테이너 스타일 */
+.Intro_container { /* 전체 컨테이너 스타일 */
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -10,7 +10,7 @@
 }
 
 
-.title { /* 제목 스타일 */
+.Intro_title { /* 제목 스타일 */
     text-align: center; /* 텍스트 중앙 정렬 */
     font-size: 32px;
     font-weight: bold;
@@ -60,7 +60,7 @@
     font-weight: bold;
 }
 
-.button {  /* 버튼 스타일 */
+.Intro_button {  /* 버튼 스타일 */
     margin: 70px;
     display: inline-block;
     background-color: #de3bff;
@@ -75,7 +75,7 @@
     transition: all 0.3s ease; /* 애니메이션 효과 */
 }
 
-.button:hover {   /* 버튼에 마우스 올릴 시 효과 */
+.Intro_button:hover {   /* 버튼에 마우스 올릴 시 효과 */
     background-color: #C70039;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     transform: translateY(-3px);

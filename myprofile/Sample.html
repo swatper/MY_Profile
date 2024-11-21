@@ -46,6 +46,7 @@
         align-self: center;
     }
     </style>
+    <link rel="stylesheet" href="CSS/Intro.css">
     <link rel="stylesheet" href="CSS/Career.css">
 </head>
 
@@ -59,8 +60,25 @@
         </a>
     </div>
 
-    <div class="Intro"> 
-        
+    <div class="Intro_Section">
+        <div class="Intro" style="width : 100%; height : 100%;"></div>
+        <script>
+            // Ajax 요청으로 CareerData.jsp에서 크기 데이터를 가져와 careerSection의 스타일 적용
+            fetch('Section/IntroSize.jsp')
+                .then(response => response.json())
+                .then(data => {
+                    const careerSection = document.getElementsByClassName('Intro')[0];
+                    careerSection.style.width = data.width;
+                    careerSection.style.height = data.height;
+                    // Career.jsp의 콘텐츠를 가져와 careerSection에 삽입
+                    return fetch('Section/Intro.jsp');
+                })
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementsByClassName('Intro').innerHTML = html;
+                })
+                .catch(error => console.error('Error:', error));
+            </script>    
     </div>
 
     <div class="info">
