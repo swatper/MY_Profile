@@ -26,7 +26,6 @@
 }
 
 .award-list {
-    display: flex; /* 세로줄과 내용을 나란히 배치 */
     flex-direction: column;
     position: relative;
     gap: 15px; /* 세로줄과 내용 간격 */
