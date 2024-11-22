@@ -26,11 +26,11 @@ body {
     color: #ffffff;
 }
 
-.Intro_Section, .Career_Section, .Archiving_Section, .Activity_Section{
+.Intro_Section, .AboutMe.Section, .Career_Section, .Archiving_Section, .Activity_Section{
     border: 1px solid #ffffff;/*영역 확인용*/
     width: 80%;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     display: flex;
     justify-content: center; /* 중앙 정렬 */
 }
