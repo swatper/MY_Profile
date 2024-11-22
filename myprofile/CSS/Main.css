@@ -24,18 +24,11 @@ div {
 .Sample{
     color: aliceblue;
 }
-.Career_Section{
+
+.Intro_Section, .Career_Section, .Archiving_Section, .Activity_Section{
     border: 1px solid #ffffff;/*영역 확인용*/
     width: 80%;
-    position: relative;
-    display: flex;
-}
-.Archiving_Section{
-    width: 80%;
-    position: relative;
-    display: flex;
-}
-.Intro_Section{
-    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
     display: flex;
 }

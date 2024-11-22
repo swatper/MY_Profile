@@ -18,8 +18,8 @@
     <div class="award">
         <div class="award-title">수료 내역</div>
         <div class="award-list">
-            <div class="award-year">- 2024년</div>
-            <div class="award-name">- 학생 창업유망팀 300+ 교육 트랙 수료</div>
+            <div class="award-year">2024년</div>
+            <div class="award-name">- 학생 창업유망팀 300+ 예비 트랙 수료</div>
             <div class="award-name">- 제 4회 지역상생 네트워크 부산진구 연합 청년창업캠프 수료</div>
         </div>
     </div>

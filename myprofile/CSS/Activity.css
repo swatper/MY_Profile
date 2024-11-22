@@ -1,5 +1,4 @@
- /* 콘텐츠를 감싸는 전체 컨테이너 */
- .Career_container {
+.Activity_container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -10,8 +9,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 그림자 효과 */
 }
 
-/* 제목 스타일 */
-.Career_title {
+.Activity_title {
     text-align: center; /* 텍스트 중앙 정렬 */
     font-size: 32px;
     font-weight: bold;
@@ -21,17 +19,17 @@
     padding-bottom: 10px;
 }
 
-.award{
+.Active{
     margin-left: 20%;
 }
 
-.award-list {
+.Active-info {
     flex-direction: column;
     position: relative;
     gap: 15px; /* 세로줄과 내용 간격 */
 }
-/*세로줄 만들기*/
-.award-list::before{
+
+.Active-info::before{
     content: ''; /* 세로줄을 위한 가상 요소 생성 */
     position: absolute; /*부모 요소 기준 위치*/
     top: 0;
@@ -41,22 +39,18 @@
     background-color: #8e44ad; /* 세로줄 색상 */
 }
 
-/* 수상 제목 스타일 */
-.award-title {
+.Active-title {
     font-size: 30px;
     font-weight: bold;
     color: #000000; /* 보라색 텍스트 */
 }
 
-/* 수상 연도 스타일 */
-.award-year {
+.Active-period {
     font-size: 25px;
-    color: #666; /* 회색 텍스트 */
+    color: #000000; /* 회색 텍스트 */
     margin-top: 1px; /* 제목과의 간격 */
 }
 
-/* 수상 설명 스타일 */
-.award-name {
-    font-size: 17px;
-    color: #000000; /* 어두운 회색 */
+.Active-desc{
+    color: #666; /* 회색 텍스트 */
 }
