@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8"%>
-<!--html 코드-->
 <div class="Activity_container">
     <!-- 섹션 제목 -->
     <div class="Activity_title">Activity</div>

@@ -1,0 +1,45 @@
+.AboutMe_container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;  /* 테두리 둥글게 */
+}
+
+.AboutMe_title {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px; /* 아래 여백 */
+    color: #2c3e50;
+    border-bottom: 2px solid #8e44ad;
+    padding-bottom: 10px;
+}
+
+.Info-List{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*한 줄에 3개씩*/ 
+    justify-content: center; /*가로 정렬*/
+    margin-left: auto; 
+    margin-right: auto; 
+    margin: 0 auto;
+    gap: 20px; /*간격*/
+}
+
+.Group{
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+}
+
+.Type{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 25px;
+}
+.Data{
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+}
