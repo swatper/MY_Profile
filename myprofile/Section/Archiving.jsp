@@ -10,7 +10,7 @@
         </div>
         <!--Notion 내용-->
         <div class="Notion" herf="">
-            <img src="IMH/Notion_Logo.png">
+            <img src="IMG/Notion_Logo.png">
             <div class="Info">학교 및 개인 공부 내용 기록 저장소</div>
         </div>
     </div>
