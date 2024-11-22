@@ -38,8 +38,8 @@
 }
 
 .GitHub img, .Notion img{
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 150px;
     margin-bottom: 5px; /* 이미지와 텍스트 사이 간격 */
 }
 
