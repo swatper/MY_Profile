@@ -9,7 +9,7 @@
         <div class="Active-info">
             <div class="Active-period">2023.09.10 ~ 현재</div>
             <div class="Active-desc">
-                <h0>창업 교육</h0>
+                <h0>창업 교육</h0><br>
                 <h0>부서별 프로젝트</h0>
             </div>
         </div>
@@ -19,7 +19,7 @@
         <div class="Active-info">
             <div class="Active-period">2024.09.15 ~ 현재</div>
             <div class="Active-desc">
-                <h0>캡스톤 디자인</h0>
+                <h0>캡스톤 디자인</h0><br>
                 <h0>AI를 이용한 요약 및 감정 분석 일기장</h0>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="Active-info">
             <div class="Active-period">2024.07.13 ~ 현재</div>
             <div class="Active-desc">
-                <h0>게임 개발</h0>
+                <h0>게임 개발</h0><br>
                 <h0>3:1 멀티 게임</h0>
             </div>
         </div>
