@@ -30,6 +30,11 @@ div {
     position: relative;
     display: flex;
 }
+.Archiving_Section{
+    width: 80%;
+    position: relative;
+    display: flex;
+}
 .Intro_Section{
     width: 80%;
     display: flex;
