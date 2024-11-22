@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="Archiving_container">
     <div class="Archiving_title">Archiving</div>
 
