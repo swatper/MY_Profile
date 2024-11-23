@@ -13,5 +13,13 @@
             <img src="IMG/Notion_Logo.png">
             <div class="Info">학교 및 개인 공부 내용 기록 저장소</div>
         </div>
+        <!--SolvedAc 내용-->
+        <div class="SolvedAc" herf="">
+            <img src="https://mazassumnida.wtf/api/v2/generate_badge?boj=sh010510">
+        </div>
+        <!--GitHub언어 내용-->
+        <div class="GitRate" herf="" >
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=swatper&layout=compact&theme=tokyonight">
+        </div>
     </div>
 </div>

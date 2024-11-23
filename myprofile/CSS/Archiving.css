@@ -38,9 +38,20 @@
 }
 
 .GitHub img, .Notion img{
+    width: 407;
+    height: 150px;
+    margin: 5px; /* 이미지와 텍스트 사이 간격 */
+}
+
+.SolvedAc img{
     width: auto;
     height: 200px;
-    margin-bottom: 5px; /* 이미지와 텍스트 사이 간격 */
+}
+.GitRate img{
+    width: 412px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .Info{
