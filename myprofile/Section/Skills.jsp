@@ -12,18 +12,14 @@
         <img class="Badge" src="https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=white" alt="Unity" onclick="fetchSkillInfo('Unity')">        <!--Unity-->
         <img class="Badge" src="https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white" alt="Oracle" onclick="fetchSkillInfo('Oracle')">     <!--Oracle-->
     </div>
-    <script>
-        console.error("Badges Complete");
-    </script>
     <div class="Skill_info">
         <div class="Badge" id="Skill" src="">언어이름</div>
         <div class="Skill_desc" id="skill-desc">이정도는 껌이죠</div>
-    </div>>
-        <script>
+    </div>
+    <script>
             console.error("Call DB");
             fetchSkillInfo('C');
-        </script>
-    </div>
+    </script>
 </div>
 
 <script>
