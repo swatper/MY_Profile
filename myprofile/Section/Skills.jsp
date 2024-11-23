@@ -12,17 +12,28 @@
         <img class="Badge" src="https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=white" alt="Unity" onclick="fetchSkillInfo('Unity')">        <!--Unity-->
         <img class="Badge" src="https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white" alt="Oracle" onclick="fetchSkillInfo('Oracle')">     <!--Oracle-->
     </div>
+    <script>
+        console.error("Badges Complete");
+    </script>
     <div class="Skill_info">
-        <div class="Badge" id="Skill" src="">기술이름</di>
+        <div class="Badge" id="Skill" src="">언어이름</div>
         <div class="Skill_desc" id="skill-desc">이정도는 껌이죠</div>
+    </div>>
         <script>
-            fetch(`/SkillsDB?name=${skillName}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('Skill').src = data.badgeURL; //뱃지 주소 변경
-                    document.getElementById('skill-desc').innerText = data.description; //내용 변경
-                })
-            .catch(error => console.error('Error:', error));
+            console.error("Call DB");
+            fetchSkillInfo('C');
         </script>
     </div>
 </div>
+
+<script>
+    function fetchSkillInfo(skillName){
+        fetch(`/SkillsDB.jsp?name=${skillName}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('Skill').src = data.badgeURL; //뱃지 주소 변경
+                document.getElementById('skill-desc').innerText = data.description; //내용 변경
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>

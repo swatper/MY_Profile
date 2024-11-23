@@ -11,23 +11,24 @@
         String dbPass ="1234"; //mysql password
 
         //Data list
-        String pLang = "lag"
-        String badgeURL = "url"
-        String langDesc = "dec"
+        String pLang = "lag";
+        String badgeURL = "url";
+        String langDesc = "dec";
 
         pLang = request.getParameter("name");
 
-        if(pLang.equal("C++")){
+        if(pLang.equals("C++")){
             pLang = "Cplus";
         }
-        if(pLang.equal("C#")){
+        if(pLang.equals("C#")){
             pLang = "Csharp";
         }
 
         String query ="select * from ProgramLanguage where pname = \'" + pLang+"\'"; //query
         // Create DB Connection
         conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
-        // Create Statement stmt = conn.createStatement();
+        // Create Statement 
+        stmt = conn.createStatement();
         // Run Qeury
         rs = stmt.executeQuery(query);
         //Set Value
@@ -40,7 +41,7 @@
         }
 
     }catch (Exception e) {
-        
+        e.printStackTrace();
     }
     response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
