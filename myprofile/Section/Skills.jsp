@@ -13,26 +13,16 @@
         <img class="Badge" src="https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white" alt="Oracle" onclick="fetchSkillInfo('Oracle')">     <!--Oracle-->
     </div>
     <div class="Skill_info">
-        <div class="Skill">기술이름</di>
-        <div class="Skill_desc">이정도는 껌이죠</div>
-        <!--
+        <div class="Badge" id="Skill" src="">기술이름</di>
+        <div class="Skill_desc" id="skill-desc">이정도는 껌이죠</div>
         <script>
-            fetch(`/getSkillInfo?name=${skillName}`)
+            fetch(`/SkillsDB?name=${skillName}`)
                 .then(response => response.json())
                 .then(data => {
-                    // 데이터 업데이트
-                    document.getElementById('skill-name').innerText = data.name;
-                    document.getElementById('skill-desc').innerText = data.description;
-                    // 뱃지 주소 업데이트
-                    const badges = document.querySelectorAll('.Badge');
-                    badges.forEach(badge => {
-                        if (badge.alt.includes(data.name)) {
-                            badge.src = data.badge_url;
-                        }
-                    });
+                    document.getElementById('Skill').src = data.badgeURL; //뱃지 주소 변경
+                    document.getElementById('skill-desc').innerText = data.description; //내용 변경
                 })
             .catch(error => console.error('Error:', error));
         </script>
-        -->
     </div>
 </div>
