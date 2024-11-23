@@ -25,7 +25,7 @@ body {
     color: #ffffff;
 }
 
-.Intro_Section, .AboutMe_Section, .Career_Section, .Archiving_Section, .Activity_Section{
+.Intro_Section, .AboutMe_Section, .Skills_Section,.Career_Section, .Archiving_Section, .Activity_Section{
     /*border: 1px solid #ffffff;*//*영역 확인용*/
     margin-bottom: 70px;
 }
