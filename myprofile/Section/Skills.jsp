@@ -22,6 +22,7 @@
     </script>
 </div>
 
+<!--
 <script>
     function fetchSkillInfo(skillName){
         fetch(`/SkillsDB.jsp?name=${skillName}`)
@@ -33,3 +34,4 @@
             .catch(error => console.error('Error:', error));
     }
 </script>
+-->

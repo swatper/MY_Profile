@@ -5,15 +5,16 @@
     Connection conn =null;
     Statement stmt =null;
     ResultSet rs =null;
+
+    //Data list
+    String pLang = "lag";
+    String badgeURL = "url";
+    String langDesc = "dec";
+    
     try {
         String jdbcDriver ="jdbc:mysql://localhost:3306/TestDB?serverTimezone=UTC";
         String dbUser ="tester"; //mysql id
         String dbPass ="1234"; //mysql password
-
-        //Data list
-        String pLang = "lag";
-        String badgeURL = "url";
-        String langDesc = "dec";
 
         pLang = request.getParameter("name");
 
@@ -24,7 +25,7 @@
             pLang = "Csharp";
         }
 
-        String query ="select * from ProgramLanguage where pname = \'" + pLang+"\'"; //query
+        String query ="select url, description from ProgramLanguage where pname = \'" + pLang+"\'"; //query
         // Create DB Connection
         conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
         // Create Statement 
