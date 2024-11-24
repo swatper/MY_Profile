@@ -1,0 +1,77 @@
+.Project_container {
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: rgba(249, 249, 249,0.8);
+    padding: 30px;
+    padding-bottom: 50px;
+    border-radius: 15px;  /* 테두리 둥글게 */
+}
+
+/* 제목 스타일 */
+.Project_title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    border-bottom: 2px solid #8e44ad;
+    padding-bottom: 10px;
+}
+
+/* 전체 박스 레이아웃 */
+.projects_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center; /* 그리드 중앙 정렬 */
+}
+
+/* 각 프로젝트 카드 스타일 */
+.project_box {
+    flex: 0 1 calc(40% - 0px);
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* 카드 내부 텍스트 스타일 */
+.project_box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.project_box img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.project_box .date {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.project_box .divider {
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.project_box p {
+    font-size: 14px;
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+    .project_box {
+        flex: 1 1 100%;
+    }
+}
