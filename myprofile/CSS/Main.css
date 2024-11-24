@@ -12,6 +12,7 @@ body {
     padding: 5px;
     flex: 1;
     align-self: center;
+    justify-content: center; /* 중앙 정렬 */
 }
 /*footer라는 클래스에 적용할 CSS*/    
 .footer{
@@ -25,7 +26,8 @@ body {
     color: #ffffff;
 }
 
-.Intro_Section, .AboutMe_Section, .Skills_Section,.Career_Section, .Archiving_Section, .Activity_Section{
-    /*border: 1px solid #ffffff;*//*영역 확인용*/
+.Intro_Section, .AboutMe_Section, .Skills_Section, .Career_Section, .Archiving_Section, .Activity_Section{
+   /* border: 1px solid #ffffff;*/
     margin-bottom: 70px;
 }
+
