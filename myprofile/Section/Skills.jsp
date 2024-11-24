@@ -13,13 +13,9 @@
         <img class="Badge" src="https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white" alt="Oracle" onclick="fetchSkillInfo('Oracle')">     <!--Oracle-->
     </div>
     <div class="Skill_info">
-        <img class="Badge" id="Skill" src="https://img.shields.io/badge/C-00599C.svg?&style=flat&logo=C&logoColor=White"></div>
+        <img class="PBadge" id="Skill" src="https://img.shields.io/badge/C-00599C.svg?&style=flat&logo=C&logoColor=White">
         <div class="Skill_desc" id="skill-desc">이정도는 껌이죠</div>
     </div>
-    <script>
-            console.error("Call DB");
-            fetchSkillInfo('C');
-    </script>
 </div>
 
 <!--
