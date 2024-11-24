@@ -42,7 +42,7 @@
             fetch(`/Section/SkillsDB.jsp?name=${encodedSkillName}`)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('Skill').src = data.badgeURL; //뱃지 주소 변경
+                    document.getElementById('Skill').src = data.url; //뱃지 주소 변경
                     document.getElementById('skill-desc').innerText = data.description; //내용 변경
                 })
             .catch(error => console.error('Error:', error));

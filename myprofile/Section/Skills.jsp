@@ -13,7 +13,7 @@
         <img class="Badge" src="https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white" alt="Oracle" onclick="fetchSkillInfo('Oracle')">     <!--Oracle-->
     </div>
     <div class="Skill_info">
-        <div class="Badge" id="Skill" src="">언어이름</div>
+        <img class="Badge" id="Skill" src="https://img.shields.io/badge/C-00599C.svg?&style=flat&logo=C&logoColor=White"></div>
         <div class="Skill_desc" id="skill-desc">이정도는 껌이죠</div>
     </div>
     <script>

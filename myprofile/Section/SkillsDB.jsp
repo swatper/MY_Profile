@@ -8,9 +8,9 @@
 
     //Data list
     String pLang = "lag";
-    String badgeURL = "url";
+    String badgeURL = "rl";
     String langDesc = "dec";
-    
+
     try {
         String jdbcDriver ="jdbc:mysql://localhost:3306/TestDB?serverTimezone=UTC";
         String dbUser ="tester"; //mysql id
@@ -18,10 +18,10 @@
 
         pLang = request.getParameter("name");
 
-        if(pLang.equals("C++")){
+        if(pLang.equals("C%2B%2B") || pLang.equals("C++")){
             pLang = "Cplus";
         }
-        if(pLang.equals("C#")){
+        if(pLang.equals("C%23") || pLang.equals("C#")){
             pLang = "Csharp";
         }
 
@@ -43,6 +43,10 @@
 
     }catch (Exception e) {
         e.printStackTrace();
+    }finally{
+        if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); } 
+        if (stmt != null) try { stmt.close(); } catch (SQLException e) { e.printStackTrace(); } 
+        if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
     }
     response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
