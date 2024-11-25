@@ -49,6 +49,16 @@
                 })
             .catch(error => console.error('Error:', error));
         }
+
+        function getBadge(skillName, badgeID){
+            const encodedSkillName = encodeURIComponent(skillName);
+            fetch(`/Section/SkillsDB.jsp?name=${encodedSkillName}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById(badgeID).src = data.url; //뱃지 주소 변경
+                })
+            .catch(error => console.error('Error:', error));
+        }
     </script>
 </head>
 
@@ -164,7 +174,16 @@
                 }, 1000);           
             }
         }
+
+        function setProjectBadge(){
+            for(i = 0; i < document.getElementsByClassName('').length; i++){
+                id = document.getElementsByClassName('')[i].id;
+                getBadge('C#', id);
+            }
+        }
+
         window.onload = init;
+        //window.onload = setProjectBadge;
     </script>
 </body>
 
