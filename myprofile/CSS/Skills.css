@@ -25,6 +25,11 @@
     border-radius: 40px;
 }
 
+.Badge:hover {   
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
 .Skills_list { 
     display: flex; 
     justify-content: center; 
