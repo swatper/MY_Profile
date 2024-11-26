@@ -12,9 +12,15 @@
         }
 
         /* 로고 스타일 */
-        .navbar .logo {
+        .navbar{
             font-size: 20px; /* 글자 크기 */
             font-weight: bold; /* 굵은 글씨 */
+        }
+
+        .logo{
+            width: 30px;
+            height: auto;
+            margin-left: 20px;
         }
 
         /* 메뉴 스타일 */
