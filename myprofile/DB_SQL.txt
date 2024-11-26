@@ -1,0 +1,16 @@
+use TestDB
+
+create table ProgramLanguage (
+pname varchar(10),
+url varchar(150),
+description varchar(1000)
+);
+
+insert into ProgramLanguage values('C', 'https://img.shields.io/badge/C-00599C.svg&style=flat&logo=C&logoColor=White','C 내용');
+insert into ProgramLanguage values('Cpuls', 'https://img.shields.io/badge/C++-00599C.svg?&style=flat&logo=Cplusplus&logoColor=White','C++ 내용');
+insert into ProgramLanguage values('Cshapr', 'https://img.shields.io/badge/C%23-A566FF?style=flat&logo=csharp&logoColor=white','C# 내용');
+insert into ProgramLanguage values('JAVA', 'https://img.shields.io/badge/JAVA-007396?style=flat&logo=OpenJDK&logoColor=white','Java 내용');
+insert into ProgramLanguage values('HTML', 'https://img.shields.io/badge/HTML5-FF0000?style=flat&logo=HTML5&logoColor=white','HTML 내용');
+insert into ProgramLanguage values('CSS', 'https://img.shields.io/badge/CSS3-00599C?style=flat&logo=CSS3&logoColor=white','CSS 내용');
+insert into ProgramLanguage values('Unity', https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=white','Unity 내용');
+insert into ProgramLanguage values('Oracle', 'https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white','Oracle 내용');
