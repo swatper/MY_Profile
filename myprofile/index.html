@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="CSS/Career.css">
     <link rel="stylesheet" href="CSS/Archiving.css">
     <link rel="stylesheet" href="CSS/Activity.css">
+    <link rel="stylesheet" href="CSS/Contact.CSS">
     <script>
         /**
         * Section 데이터를 동적으로 불러오는 함수
@@ -41,7 +42,7 @@
 
         function fetchSkillInfo(skillName){ 
             const encodedSkillName = encodeURIComponent(skillName);
-            fetch(`/Section/SkillsDB.jsp?name=${encodedSkillName}`)
+            fetch(`Section/SkillsDB.jsp?name=${encodedSkillName}`)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('Skill').src = data.url; //뱃지 주소 변경
@@ -52,7 +53,7 @@
 
         function getBadge(skillName, badgeID){
             const encodedSkillName = encodeURIComponent(skillName);
-            fetch(`/Section/SkillsDB.jsp?name=${encodedSkillName}`)
+            fetch(`Section/SkillsDB.jsp?name=${encodedSkillName}`)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById(badgeID).src = data.url; //뱃지 주소 변경
@@ -135,6 +136,10 @@
         </div>
 
         <div id="Contact_Section" class="Contact_Section">
+            <div class="Contact" style="width : 100%; height : 100%;"></div>
+            <script>
+                loadSection('Contact');
+            </script>
         </div>
     </div>
     

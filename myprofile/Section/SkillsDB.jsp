@@ -13,7 +13,8 @@
 
     try {
         String jdbcDriver ="jdbc:mysql://localhost:3306/TestDB?serverTimezone=UTC";
-        String dbUser ="tester"; //mysql id
+        //String dbUser ="tester"; //mysql id
+        String dbUser ="root"; //mysql id
         String dbPass ="1234"; //mysql password
 
         pLang = request.getParameter("name");
