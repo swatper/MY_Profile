@@ -29,9 +29,22 @@
 }
 
 .Group{
-    flex-direction: column; 
+    display: flex;
+    flex-direction: row; 
     align-items: center; 
-    text-align: center;
+    gap: 10px;
+}
+
+img{
+    width: 50px;
+    height: auto;
+}
+
+.Text{
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    justify-content: center; /* 텍스트 정렬 */
+    text-align: left;
 }
 
 .Type{

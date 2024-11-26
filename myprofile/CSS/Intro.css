@@ -60,7 +60,6 @@
 }
 
 .Intro_button {  /* 버튼 스타일 */
-    margin: 70px;
     display: inline-block;
     background-color: #de3bff;
     color: #fff;
