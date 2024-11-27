@@ -185,6 +185,69 @@
         window.onload = init;
         //window.onload = setProjectBadge;
     </script>
+    <script>
+        // 이전 슬라이드로 이동
+        function prevSlide(button) {
+            const slider = button.parentElement.parentElement;
+            const images = slider.querySelectorAll("img");
+            const activeImage = slider.querySelector("img.active");
+            let activeIndex = Array.from(images).indexOf(activeImage);
+
+            // 현재 활성화된 이미지의 이전 이미지로 이동
+            activeImage.classList.remove("active");
+            activeIndex = (activeIndex - 1 + images.length) % images.length;
+            images[activeIndex].classList.add("active");
+        }
+
+        // 다음 슬라이드로 이동
+        function nextSlide(button) {
+            const slider = button.parentElement.parentElement;
+            const images = slider.querySelectorAll("img");
+            const activeImage = slider.querySelector("img.active");
+            let activeIndex = Array.from(images).indexOf(activeImage);
+
+            // 현재 활성화된 이미지의 다음 이미지로 이동
+            activeImage.classList.remove("active");
+            activeIndex = (activeIndex + 1) % images.length;
+            images[activeIndex].classList.add("active");
+        }
+    </script>
+    <script>
+        // 팝업 열기
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+    
+        // 팝업 닫기
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    
+        // 프로젝트 추가 요청
+        function submitProject() {
+            const form = document.getElementById('projectForm');
+            const formData = new FormData(form);
+    
+            fetch('Section/addProject.jsp', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(result => {
+                    if (result === 'success') {
+                        alert('프로젝트가 성공적으로 추가되었습니다!');
+                        form.reset();
+                        location.reload(); // 페이지 새로고침
+                    } else {
+                        alert('프로젝트 추가 중 오류가 발생했습니다.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('서버와 통신 중 오류가 발생했습니다.');
+                });
+        }
+    </script>
 </body>
 
 </html>
