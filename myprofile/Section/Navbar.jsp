@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="navbar">
-    <img class="logo" src ="../IMG/Nav_Logo.png" alt="로고">
+    <img class="logo" src ="IMG/Nav_Logo.png" alt="로고">
     <ul class="menu">
         <li><a href="#Intro_Section">Intro</a></li>
         <li><a href="#AboutMe_Section">About Me</a></li>

@@ -1,85 +1,107 @@
 <%@ page import="java.sql.*" %>
-<%@ page import="java.io.*" %>
+<%@ page import="org.apache.commons.fileupload.*" %>
+<%@ page import="org.apache.commons.fileupload.disk.*" %>
+<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
 <%@ page import="java.util.*" %>
+<%@ page import="java.io.*" %>
+<%@ page contentType="application/json; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%
-    // 데이터베이스 연결 정보
-    String jdbcDriver = "jdbc:mysql://localhost:3306/TestDB?serverTimezone=UTC";
-    String dbUser = "root";
-    String dbPassword = "1234";
+    response.setContentType("application/json");
+    boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
-    // 클라이언트로부터 데이터 받기
-    String title = request.getParameter("title");
-    String skill = request.getParameter("skill");
-    String startDate = request.getParameter("startDate");
-    String endDate = request.getParameter("endDate");
-    String desc = request.getParameter("desc");
-    String details = request.getParameter("description");
-
-    // 이미지 업로드 경로 설정
-    String uploadPath = application.getRealPath("/") + "IMG/";
-    File uploadDir = new File(uploadPath);
-    if (!uploadDir.exists()) {
-        uploadDir.mkdir(); // IMG 폴더가 없으면 생성
+    if (!isMultipart) {
+        out.print("{\"success\": false, \"message\": \"Form must have enctype=multipart/form-data.\"}");
+        return;
     }
 
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
+    DiskFileItemFactory factory = new DiskFileItemFactory();
+    ServletFileUpload upload = new ServletFileUpload(factory);
+
+    String title = null, skill = null, startDate = null, endDate = null, shortDesc = null, description = null;
+    boolean success = false;
+    int projectId = -1; // 프로젝트 ID 저장
+    List<FileItem> fileItems = null;
 
     try {
+        // 요청 데이터 파싱
+        fileItems = upload.parseRequest(request);
+
+        for (FileItem item : fileItems) {
+            if (item.isFormField()) {
+                String fieldName = item.getFieldName();
+                String fieldValue = item.getString("UTF-8");
+                switch (fieldName) {
+                    case "title": title = fieldValue; break;
+                    case "skill": skill = fieldValue; break;
+                    case "startDate": startDate = fieldValue; break;
+                    case "endDate": endDate = fieldValue; break;
+                    case "shortDesc": shortDesc = fieldValue; break;
+                    case "description": description = fieldValue; break;
+                }
+            }
+        }
+
         // 데이터베이스 연결
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPassword);
+        String dbURL = "jdbc:mysql://localhost:3306/TestDB?serverTimezone=UTC";
+        String dbUser = "root";
+        String dbPassword = "1234";
 
-        // 1. Project 테이블에 데이터 삽입
-        String insertProjectSQL = "INSERT INTO Project (title, skill, start_date, end_date, short_desc, description) VALUES (?, ?, ?, ?, ?, ?)";
-        pstmt = conn.prepareStatement(insertProjectSQL, Statement.RETURN_GENERATED_KEYS);
+        try (Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword)) {
+            // 프로젝트 데이터 삽입
+            String projectInsertSQL = 
+                "INSERT INTO Project (title, skill, start_date, end_date, short_desc, description) VALUES (?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement pstmt = conn.prepareStatement(projectInsertSQL, Statement.RETURN_GENERATED_KEYS)) {
+                pstmt.setString(1, title);
+                pstmt.setString(2, skill);
+                pstmt.setString(3, startDate);
+                pstmt.setString(4, endDate);
+                pstmt.setString(5, shortDesc);
+                pstmt.setString(6, description);
+                success = pstmt.executeUpdate() > 0;
 
-        pstmt.setString(1, title);
-        pstmt.setString(2, skill);
-        pstmt.setString(3, startDate);
-        pstmt.setString(4, endDate);
-        pstmt.setString(5, desc);
-        pstmt.setString(6, details);
+                // 생성된 프로젝트 ID 가져오기
+                if (success) {
+                    try (ResultSet rs = pstmt.getGeneratedKeys()) {
+                        if (rs.next()) {
+                            projectId = rs.getInt(1);
+                        }
+                    }
+                }
+            }
 
-        int rows = pstmt.executeUpdate();
+            // 이미지 파일 처리 및 저장
+            if (projectId != -1 && success) {
+                String uploadPath = application.getRealPath("/") + "MY_Profile/myprofile/IMG/";
+                File uploadDir = new File(uploadPath);
+                if (!uploadDir.exists()) {
+                    uploadDir.mkdir(); // 업로드 디렉토리 생성
+                }
 
-        // 생성된 프로젝트 ID 가져오기
-        int projectId = -1;
-        if (rows > 0) {
-            rs = pstmt.getGeneratedKeys();
-            if (rs.next()) {
-                projectId = rs.getInt(1);
+                String imageInsertSQL = "INSERT INTO Image (project_id, image_path) VALUES (?, ?)";
+                try (PreparedStatement imageStmt = conn.prepareStatement(imageInsertSQL)) {
+                    for (FileItem item : fileItems) {
+                        if (!item.isFormField() && item.getName() != null && !item.getName().isEmpty()) {
+                            String fileName = new File(item.getName()).getName();
+                            String filePath = uploadPath + fileName;
+
+                            // 서버에 파일 저장
+                            item.write(new File(filePath));
+
+                            // 이미지 경로를 DB에 삽입
+                            imageStmt.setInt(1, projectId);
+                            imageStmt.setString(2, "IMG/" + fileName);
+                            imageStmt.executeUpdate();
+                        }
+                    }
+                }
             }
         }
-
-        // 2. Image 테이블에 이미지 데이터 삽입
-        for (int i = 0; i < 3; i++) {
-            Part filePart = request.getPart("images");
-            if (filePart != null && filePart.getSize() > 0) {
-                // 파일 저장
-                String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
-                String filePath = uploadPath + fileName;
-                filePart.write(filePath);
-
-                // Image 테이블에 경로 저장
-                String insertImageSQL = "INSERT INTO Image (project_id, image_path) VALUES (?, ?)";
-                pstmt = conn.prepareStatement(insertImageSQL);
-                pstmt.setInt(1, projectId);
-                pstmt.setString(2, "IMG/" + fileName);
-                pstmt.executeUpdate();
-            }
-        }
-
-        // 성공 메시지 반환
-        out.print("success");
     } catch (Exception e) {
         e.printStackTrace();
-        out.print("error");
-    } finally {
-        // 리소스 정리
-        if (rs != null) try { rs.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-        if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-        if (conn != null) try { conn.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+        success = false;
     }
+
+    // JSON 응답 반환
+    out.print("{\"success\": " + success + "}");
 %>

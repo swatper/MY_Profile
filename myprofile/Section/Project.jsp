@@ -91,14 +91,14 @@
 <div id="popup" style="display: none; background-color: rgba(0,0,0,0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
     <div style="background: white; margin: 10% auto; padding: 20px; width: 50%; border-radius: 10px;">
         <h3>프로젝트 추가</h3>
-        <form id="projectForm" enctype="multipart/form-data">
-            <input type="text" id="projectTitle" name="title" placeholder="프로젝트 제목" required>
-            <input type="text" id="projectSkill" name="skill" placeholder="사용 스킬" required>
-            <input type="date" id="startDate" name="startDate" required>
-            <input type="date" id="endDate" name="endDate" required>
-            <textarea id="projectDesc" name="desc" placeholder="한 줄 설명" rows="2" required></textarea>
-            <textarea id="projectDetails" name="details" placeholder="프로젝트 상세 설명 (하이픈으로 구분)" rows="5" required></textarea>
-            <input type="file" id="projectImages" name="images" accept="image/*" multiple required>
+        <form id="projectForm" action="addProject.jsp" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+            <input type="text"  name="title" placeholder="프로젝트 제목" required>
+            <input type="text" name="skill" placeholder="사용 스킬" required>
+            <input type="date" name="startDate" required>
+            <input type="date" name="endDate" required>
+            <textarea  name="shortDesc" placeholder="한 줄 설명" rows="2" required></textarea>
+            <textarea  name="description" placeholder="프로젝트 상세 설명 (하이픈으로 구분)" rows="5" required></textarea>
+            <input type="file" id="images" name="images" accept="image/*" multiple required>
             <button type="button" onclick="submitProject()">추가</button>
             <button type="button" onclick="closePopup()">취소</button>
         </form>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ko">
+
 <head>
     <title>Cloud_404NotFound</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,12 +35,12 @@
                 })
                 .then(response => response.text())
                 .then(html => {
-                document.getElementsByClassName(sectionName)[0].innerHTML = html;
+                    document.getElementsByClassName(sectionName)[0].innerHTML = html;
                 })
                 .catch(error => console.error(`Error loading ${sectionName} section:`, error));
         }
 
-        function fetchSkillInfo(skillName){ 
+        function fetchSkillInfo(skillName) {
             const encodedSkillName = encodeURIComponent(skillName);
             fetch(`Section/SkillsDB.jsp?name=${encodedSkillName}`)
                 .then(response => response.json())
@@ -48,17 +48,17 @@
                     document.getElementById('Skill').src = data.url; //뱃지 주소 변경
                     document.getElementById('skill-desc').innerText = data.description; //내용 변경
                 })
-            .catch(error => console.error('Error:', error));
+                .catch(error => console.error('Error:', error));
         }
 
-        function getBadge(skillName, badgeID){
+        function getBadge(skillName, badgeID) {
             const encodedSkillName = encodeURIComponent(skillName);
             fetch(`Section/SkillsDB.jsp?name=${encodedSkillName}`)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById(badgeID).src = data.url; //뱃지 주소 변경
                 })
-            .catch(error => console.error('Error:', error));
+                .catch(error => console.error('Error:', error));
         }
     </script>
 </head>
@@ -75,17 +75,17 @@
     </div>
     <!--각 세션 항목-->
     <div class="Navbar_Section">
-        <div class="Navbar" style="width : 100%; height : 100%;" align = "center"></div>
+        <div class="Navbar" style="width : 100%; height : 100%;" align="center"></div>
         <script>
             loadSection('Navbar');
-        </script>    
+        </script>
     </div>
     <div class="Section">
         <div id="Intro_Section" class="Intro_Section">
-            <div class="Intro" style="width : 100%; height : 100%;" align = "center"></div>
+            <div class="Intro" style="width : 100%; height : 100%;" align="center"></div>
             <script>
                 loadSection('Intro');
-            </script>    
+            </script>
         </div>
 
         <div id="AboutMe_Section" class="AboutMe_Section">
@@ -113,9 +113,9 @@
             <div class="Career" style="width : 100%; height : 100%;"></div>
             <script>
                 loadSection('Career');
-            </script>    
+            </script>
         </div>
-        
+
         <div id="Activity_Section" class="Activity_Section">
             <div class="Activity" style="width : 100%; height : 100%;"></div>
             <script>
@@ -127,7 +127,7 @@
             <div class="Archiving" style="width : 100%; height : 100%;"></div>
             <script>
                 loadSection('Archiving');
-            </script>    
+            </script>
         </div>
 
         <div id="Contact_Section" class="Contact_Section">
@@ -137,12 +137,12 @@
             </script>
         </div>
     </div>
-    
+
     <footer class="footer">
         <h>404_NotFound: Designed & Developed by PSH, KGB</h>
     </footer>
     <script>
-        function init(){
+        function init() {
             var style = ["style1", "style2", "style3", "style4"];
             var tam = ["tam1", "tam1", "tam1", "tam2", "tam3"];
             var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
@@ -156,27 +156,27 @@
             var heightWindow = window.innerHeight;
             for (var i = 0; i < qtdeEstrelas; i++) {
                 estrela += "<span class='estrela " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
-                + tam[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
-                + getRandomArbitrary(0, widthWindow) + "px; top: " + getRandomArbitrary(0, heightWindow) + "px;'></span>";
+                    + tam[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." + getRandomArbitrary(0, 9) + "s; left: "
+                    + getRandomArbitrary(0, widthWindow) + "px; top: " + getRandomArbitrary(0, heightWindow) + "px;'></span>";
             }
             noite.innerHTML = estrela;
             var numeroAleatorio = 5000;
-            setTimeout(function(){
+            setTimeout(function () {
                 carregarMeteoro();
             }, numeroAleatorio);
-            function carregarMeteoro(){
+            function carregarMeteoro() {
                 setTimeout(carregarMeteoro, numeroAleatorio);
                 numeroAleatorio = getRandomArbitrary(5000, 10000);
-                var meteoro = "<div class='meteoro "+ style[getRandomArbitrary(0, 4)] +"'></div>";
+                var meteoro = "<div class='meteoro " + style[getRandomArbitrary(0, 4)] + "'></div>";
                 document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = meteoro;
-                setTimeout(function(){
+                setTimeout(function () {
                     document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = "";
-                }, 1000);           
+                }, 1000);
             }
         }
 
-        function setProjectBadge(){
-            for(i = 0; i < document.getElementsByClassName('').length; i++){
+        function setProjectBadge() {
+            for (i = 0; i < document.getElementsByClassName('').length; i++) {
                 id = document.getElementsByClassName('')[i].id;
                 getBadge('C#', id);
             }
@@ -217,35 +217,40 @@
         function openPopup() {
             document.getElementById('popup').style.display = 'block';
         }
-    
+
         // 팝업 닫기
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
         }
-    
+
         // 프로젝트 추가 요청
         function submitProject() {
             const form = document.getElementById('projectForm');
             const formData = new FormData(form);
-    
+
             fetch('Section/addProject.jsp', {
                 method: 'POST',
                 body: formData
             })
-                .then(response => response.text())
-                .then(result => {
-                    if (result === 'success') {
-                        alert('프로젝트가 성공적으로 추가되었습니다!');
-                        form.reset();
-                        location.reload(); // 페이지 새로고침
-                    } else {
-                        alert('프로젝트 추가 중 오류가 발생했습니다.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('서버와 통신 중 오류가 발생했습니다.');
-                });
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json(); // JSON 응답 처리
+            })
+            .then(result => {
+                if (result.success) {
+                    alert('프로젝트가 성공적으로 추가되었습니다!');
+                    form.reset(); // 폼 초기화
+                    location.reload(); // 페이지 새로고침
+                } else {
+                    alert('프로젝트 추가 중 오류가 발생했습니다.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('서버와 통신 중 오류가 발생했습니다.');
+            });
         }
     </script>
 </body>
