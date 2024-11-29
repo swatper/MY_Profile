@@ -154,7 +154,7 @@
 
 <!-- 프로젝트 추가 팝업 -->
 <div id="popup" style="display: none; background-color: rgba(0,0,0,0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
-    <div style="background: white; margin: 10% auto; padding: 20px; width: 50%; border-radius: 10px;">
+    <div class="InputInfo">
         <h3>프로젝트 추가</h3>
         <form id="projectForm" action="addProject.jsp" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
             <input type="text"  name="title" placeholder="프로젝트 제목" required>
@@ -164,8 +164,10 @@
             <textarea  name="shortDesc" placeholder="한 줄 설명" rows="2" required></textarea>
             <textarea  name="description" placeholder="프로젝트 상세 설명 (하이픈으로 구분)" rows="5" required></textarea>
             <input type="file" id="images" name="images" accept="image/*" multiple required>
-            <button type="button" onclick="submitProject()">추가</button>
-            <button type="button" onclick="closePopup()">취소</button>
+            <div class="Buttons">
+                <button type="button" onclick="submitProject()">추가</button>
+                <button type="button" onclick="closePopup()">취소</button>
+            </div>
         </form>
     </div>
 </div>

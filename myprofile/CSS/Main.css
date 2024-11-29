@@ -33,3 +33,14 @@ body {
     margin-bottom: 70px;
     padding-top: 100px;
 }
+.Project_Section { 
+    position: relative; 
+}
+
+#addProjectButton{
+    z-index: 1;
+    position:absolute;
+    top: 130px;
+    right: 300px;
+    width: auto;
+}

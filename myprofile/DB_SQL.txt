@@ -15,6 +15,12 @@ insert into ProgramLanguage values('CSS', 'https://img.shields.io/badge/CSS3-005
 insert into ProgramLanguage values('Unity', https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=white','Unity 내용');
 insert into ProgramLanguage values('Oracle', 'https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white','Oracle 내용');
 
+프로젝트 테이블 생성
+CREATE TABLE Project(pid int AUTO_INCREMENT PRIMARY KEY , title varchar(30), skill varchar(30), start_date date, end_date date, short_desc varchar(100), description varchar(500));
+
+프로젝트용 이미지 테이블 생성
+CREATE TABLE Image(img_id INT AUTO_INCREMENT PRIMARY KEY, project_id INT NOT NULL, image_path VARCHAR(150) NOT NULL, FOREIGN KEY (project_id) REFERENCES Project(pid) ON DELETE CASCADE);
+
 콘텍트 테이블 생성
 CREATE TABLE contacts ( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), title VARCHAR(100), msg varchar(500) , created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
