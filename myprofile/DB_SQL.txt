@@ -14,3 +14,7 @@ insert into ProgramLanguage values('HTML', 'https://img.shields.io/badge/HTML5-F
 insert into ProgramLanguage values('CSS', 'https://img.shields.io/badge/CSS3-00599C?style=flat&logo=CSS3&logoColor=white','CSS 내용');
 insert into ProgramLanguage values('Unity', https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=white','Unity 내용');
 insert into ProgramLanguage values('Oracle', 'https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white','Oracle 내용');
+
+콘텍트 테이블 생성
+CREATE TABLE contacts ( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), title VARCHAR(100), msg varchar(500) , created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+

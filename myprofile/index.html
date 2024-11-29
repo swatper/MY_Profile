@@ -107,6 +107,7 @@
             <script>
                 loadSection('Project');
             </script>
+            <button id="addProjectButton" style="display: none;" onclick="openPopup()">프로젝트 추가</button>
         </div>
 
         <div id="Career_Section" class="Career_Section">
@@ -253,6 +254,50 @@
             });
         }
     </script>
+    <script>
+        function checkPass() {
+            const inputValue = document.getElementById("toggleInput").value.trim();
+            const button = document.getElementById("addProjectButton");
+
+            if (inputValue === "ins") {
+                localStorage.setItem("showProjectButton", "true"); // 상태 저장
+                button.disabled = false; // 활성화
+                alert("프로젝트 추가 버튼이 활성화되었습니다!");
+            } else if (inputValue === "no") {
+                button.disabled = true; // 비활성화
+                localStorage.setItem("showProjectButton", "false"); // 상태 저장
+                button.style.display = "none"; // 버튼 숨기기
+                alert("프로젝트 추가 버튼이 비활성화되었습니다!");
+            } else {
+                localStorage.removeItem("showProjectButton"); // 상태 제거
+                button.style.display = "none"; // 버튼 숨기기
+                alert("올바른 명령어를 입력하세요.");
+            }
+
+            updateButtonVisibility();
+        }
+
+        function updateButtonVisibility() {
+            const showProjectButton = localStorage.getItem("showProjectButton");
+            const button = document.getElementById("addProjectButton");
+
+            if (!button) {
+                console.warn("addProjectButton 요소를 찾을 수 없습니다.");
+                return;
+            }
+
+            if (showProjectButton === "true") {
+                button.style.display = "block"; // 버튼 표시
+            } else {
+                button.style.display = "none"; // 버튼 숨기기
+            }
+        }
+
+
+        // 페이지 로드 시 버튼 상태 확인
+        document.addEventListener("DOMContentLoaded", updateButtonVisibility);
+    </script>
+
 </body>
 
 </html>
