@@ -46,10 +46,10 @@
 }
 
 .project_box img {
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    vertical-align: middle;
+    width: auto; /* 이미지의 원본 가로 크기 */
+    height: 30px; /* 이미지의 원본 세로 크기 */
+    margin-right: 10px; /* 여백 유지 */
+    vertical-align: middle; /* 텍스트 정렬 */
 }
 
 .project_box .date {
@@ -119,6 +119,7 @@
     background-color: rgba(0, 0, 0, 0.8); /* 호버 시 더 어두운 색상 */
     transform: scale(1.1); /* 약간 확대 */
 }
+
 
 /* 반응형 처리 */
 @media (max-width: 768px) {

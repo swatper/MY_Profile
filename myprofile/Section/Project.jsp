@@ -34,6 +34,8 @@
                     String desc = rs.getString("short_desc");
                     String details = rs.getString("description");
 
+                    String[] skillList = skill.split("-"); // 스킬 분리
+
                     // 관련 이미지 가져오기
                     String getImageSQL = "SELECT image_path FROM Image WHERE project_id = " + pid;
                     Statement imgStmt = conn.createStatement();
@@ -49,6 +51,70 @@
             <h3><%= title %></h3>
             <div class="date"><%= startDate %> ~ <%= endDate %></div>
             <div class="divider"></div>
+
+            <div class="project_skills">
+                <%
+                    // Skill 데이터를 분리하여 각 배지 생성
+                    if (skill != null && !skill.isEmpty()) {
+                        String[] skillArray = skill.split("-"); // '-'로 분리
+                        for (String skill1 : skillArray) {
+                            String currentSkill = skill1.trim(); // 공백 제거
+                            switch (currentSkill) {
+                                case "C":
+                %>
+                                    <img class="p_Badge" src="https://img.shields.io/badge/C-00599C.svg?&style=flat&logo=C&logoColor=White" alt="C">
+                <%
+                                    break;
+                                case "C++":
+                %>
+                                    <img class="p_Badge" src="https://img.shields.io/badge/C++-00599C.svg?&style=flat&logo=Cplusplus&logoColor=White" alt="C++">
+                <%
+                                    break;
+                                case "C#":
+                %>
+                                    <img class="p_Badge" src="https://img.shields.io/badge/C%23-37039A?style=flat&logo=c%23&logoColor=white" alt="C#">
+                <%
+                                    break;
+                                case "html":
+                %>
+                                    <img class="p_Badge" src="https://img.shields.io/badge/HTML5-FF0000?style=flat&logo=HTML5&logoColor=white" alt="HTML">
+                <%
+                                    break;
+                                case "css":
+                %>
+                                    <img class="p_Badge" src="https://img.shields.io/badge/CSS3-00599C?style=flat&logo=CSS3&logoColor=white" alt="css">
+                <%
+                                    break;
+                                case "Unity":
+                %>
+                                    <img class="p_Badge" src="https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=white" alt="unity">
+                <%
+                                    break;
+                                case "Oracle":
+                %>
+                                    <img class="p_Badge" src="https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white" alt="oracle">
+                <%
+                                    break;
+                                case "Java":
+                %>
+                                    <img class="p_Badge" src="https://img.shields.io/badge/JAVA-007396?style=flat&logo=OpenJDK&logoColor=white" alt="Java">
+                <%
+                                    break;
+                                default:
+                %>
+                                    <span>Unknown skill: <%= currentSkill %></span> <!-- 디버깅용 -->
+                <%
+                                    break;
+                            }
+                        }
+                    } else {
+                %>
+                    <p>No skills available</p>
+                <%
+                    }
+                %>
+            </div>
+
             <p><%= desc %></p>
             <ul>
                 <% 
