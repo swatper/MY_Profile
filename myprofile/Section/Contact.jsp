@@ -1,16 +1,20 @@
-<%@ page language="java" contentType="application/json; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div class="Contact_container">
     <h1 class="Contact_title">Contact</h1>
-    <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name">
+    <form method="post" action="Section/SendContact.jsp" class="Contact_form" accept-charset="UTF-8">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" placeholder="Enter a title">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="10" placeholder="Enter your message"></textarea>
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="msg" rows="5" required></textarea>
 
-        <button type="submit">Send</button>
+        <button type="submit" name="submit" value="전송 완료">Send</button>
     </form>
+
+    
 </div>
