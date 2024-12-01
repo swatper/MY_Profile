@@ -11,7 +11,7 @@
 
 .Activity_title {
     text-align: center; /* 텍스트 중앙 정렬 */
-    font-size: 32px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 50px; /* 아래 여백 */
     color: #2c3e50;
@@ -21,7 +21,7 @@
 
 .Active{
     margin-left: 20%;
-    padding-bottom: 70px;
+    padding-bottom: 50px;
 }
 
 .Active-info {
@@ -51,6 +51,7 @@
     font-size: 25px;
     color: #000000;
     margin-top: 1px; /* 제목과의 간격 */
+    margin-bottom: 5px;
 }
 
 .Active-desc{

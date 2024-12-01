@@ -11,7 +11,7 @@
 
 .Career_title {
     text-align: center; /* 텍스트 중앙 정렬 */
-    font-size: 32px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 50px; /* 아래 여백 */
     color: #2c3e50;
@@ -21,7 +21,7 @@
 
 .award{
     margin-left: 20%;
-    padding-bottom: 70px;
+    padding-bottom: 50px;
 }
 
 .award-list {
@@ -53,6 +53,7 @@
     font-size: 25px;
     color: #666; /* 회색 텍스트 */
     margin-top: 1px; /* 제목과의 간격 */
+    margin-bottom: 5px;
 }
 
 /* 수상 설명 스타일 */

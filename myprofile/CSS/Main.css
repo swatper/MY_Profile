@@ -28,7 +28,7 @@ body {
 .Sample{
     color: #ffffff;
 }
-.Intro_Section, .AboutMe_Section, .Skills_Section, .Project_Section, .Career_Section, .Archiving_Section, .Activity_Section{
+.Intro_Section, .AboutMe_Section, .Skills_Section, .Project_Section, .Career_Section, .Archiving_Section, .Activity_Section, .Contact_Section{
    /* border: 1px solid #ffffff;*/
     margin-bottom: 70px;
     padding-top: 100px;
