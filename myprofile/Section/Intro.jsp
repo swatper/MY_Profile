@@ -16,6 +16,6 @@
 
     <!-- 버튼 -->
     <div style="text-align: center;">
-        <a href="#about" class="Intro_button">더 알아보기 ↓</a>
+        <a href="#AboutMe_Section" class="Intro_button">더 알아보기 ↓</a>
     </div>
 </div>

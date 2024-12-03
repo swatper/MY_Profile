@@ -76,38 +76,6 @@ section {
     box-sizing: border-box;
 }
 
-#home {
-    background-color: #f4f4f4;
-}
-
-#about {
-    background-color: #d9e3f0;
-}
-
-#services {
-    background-color: #f0d9d9;
-}
-
-#contact {
-    background-color: #f7f7c6;
-}
-
-#career {
-    background-color: #c6e7d0;
-}
-
-#activity {
-    background-color: #e7d0f0;
-}
-
-#archive {
-    background-color: #d9d9d9;
-}
-
-#project {
-    background-color: #c6d9f0;
-}
-
 .pass {
     width: 100px;
     background-color: #333;
