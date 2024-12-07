@@ -50,16 +50,6 @@
                 })
                 .catch(error => console.error('Error:', error));
         }
-
-        function getBadge(skillName, badgeID) {
-            const encodedSkillName = encodeURIComponent(skillName);
-            fetch(`Section/SkillsDB.jsp?name=${encodedSkillName}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById(badgeID).src = data.url; //뱃지 주소 변경
-                })
-                .catch(error => console.error('Error:', error));
-        }
     </script>
 </head>
 
@@ -184,7 +174,6 @@
         }
 
         window.onload = init;
-        //window.onload = setProjectBadge;
     </script>
     <script>
         // 이전 슬라이드로 이동
@@ -292,8 +281,6 @@
                 button.style.display = "none"; // 버튼 숨기기
             }
         }
-
-
         // 페이지 로드 시 버튼 상태 확인
         document.addEventListener("DOMContentLoaded", updateButtonVisibility);
     </script>
